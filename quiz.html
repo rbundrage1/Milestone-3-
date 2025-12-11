@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Self-Assessment Quiz - American Football 101</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="teams.html">NFL Teams</a>
+    <a href="concepts.html">Key Concepts</a>
+    <a href="formations.html">Formations &amp; Positions</a>
+    <a href="history.html">History</a>
+    <a href="rules.html">Rules &amp; Scoring</a>
+    <a href="quiz.html" class="active">Self-Assessment Quiz</a>
+    <a href="about.html">About &amp; References</a>
+  </div>
+
+  <div class="page">
+    <div class="container">
+      <h1>Self-Assessment Quiz</h1>
+      <p class="small quiz-intro">
+        Test your understanding of the basics from American Football 101. Answer each question,
+        then submit to see your score and detailed feedback.
+      </p>
+
+      <form id="quiz-form">
+        <div class="quiz-question" id="q1-block">
+          <h2>1. Fill in the blank</h2>
+          <p>
+            In American football, a touchdown is worth
+            <strong>how many points?</strong>
+          </p>
+          <label for="q1">Your answer (number):</label>
+          <input type="text" id="q1" name="q1" autocomplete="off" />
+          <div class="feedback" id="q1-feedback"></div>
+        </div>
+
+        <div class="quiz-question" id="q2-block">
+          <h2>2. Multiple choice</h2>
+          <p>
+            On offense, how many players from one team are allowed on the field at the same time?
+          </p>
+          <fieldset class="quiz-options">
+            <legend class="sr-only">Offensive players on the field</legend>
+            <label>
+              <input type="radio" name="q2" value="9" />
+              9 players
+            </label>
+            <label>
+              <input type="radio" name="q2" value="10" />
+              10 players
+            </label>
+            <label>
+              <input type="radio" name="q2" value="11" />
+              11 players
+            </label>
+            <label>
+              <input type="radio" name="q2" value="12" />
+              12 players
+            </label>
+          </fieldset>
+          <div class="feedback" id="q2-feedback"></div>
+        </div>
+
+        <div class="quiz-question" id="q3-block">
+          <h2>3. Multiple choice</h2>
+          <p>
+            Typically, how many yards does an offense need to gain for a new first down?
+          </p>
+          <fieldset class="quiz-options">
+            <legend class="sr-only">Yards needed for a first down</legend>
+            <label>
+              <input type="radio" name="q3" value="5" />
+              5 yards
+            </label>
+            <label>
+              <input type="radio" name="q3" value="10" />
+              10 yards
+            </label>
+            <label>
+              <input type="radio" name="q3" value="15" />
+              15 yards
+            </label>
+            <label>
+              <input type="radio" name="q3" value="20" />
+              20 yards
+            </label>
+          </fieldset>
+          <div class="feedback" id="q3-feedback"></div>
+        </div>
+
+        <div class="quiz-question" id="q4-block">
+          <h2>4. Multiple choice</h2>
+          <p>
+            Which option best describes the
+            <strong>line of scrimmage</strong>?
+          </p>
+          <fieldset class="quiz-options">
+            <legend class="sr-only">Definition of line of scrimmage</legend>
+            <label>
+              <input type="radio" name="q4" value="goal-line" />
+              The line at the very front of the end zone.
+            </label>
+            <label>
+              <input type="radio" name="q4" value="where-play-begins" />
+              An imaginary line where the ball is spotted and each play begins.
+            </label>
+            <label>
+              <input type="radio" name="q4" value="first-down-line" />
+              The line that marks where you must reach to get a first down.
+            </label>
+            <label>
+              <input type="radio" name="q4" value="sideline" />
+              The boundary on the left or right side of the field.
+            </label>
+          </fieldset>
+          <div class="feedback" id="q4-feedback"></div>
+        </div>
+
+        <div class="quiz-question" id="q5-block">
+          <h2>5. Multi-selection</h2>
+          <p>
+            Which of the following are <strong>offensive positions</strong>? <br />
+            <span class="small">(Choose all that apply.)</span>
+          </p>
+          <fieldset class="quiz-options">
+            <legend class="sr-only">Offensive positions</legend>
+            <label>
+              <input type="checkbox" name="q5" value="qb" />
+              Quarterback (QB)
+            </label>
+            <label>
+              <input type="checkbox" name="q5" value="lb" />
+              Linebacker (LB)
+            </label>
+            <label>
+              <input type="checkbox" name="q5" value="rb" />
+              Running Back (RB)
+            </label>
+            <label>
+              <input type="checkbox" name="q5" value="wr" />
+              Wide Receiver (WR)
+            </label>
+            <label>
+              <input type="checkbox" name="q5" value="cb" />
+              Cornerback (CB)
+            </label>
+          </fieldset>
+          <div class="feedback" id="q5-feedback"></div>
+        </div>
+
+        <div class="quiz-actions">
+          <button type="submit" class="btn-primary">Submit quiz</button>
+          <button type="button" id="reset-btn" class="btn-secondary">Reset / Retake</button>
+        </div>
+      </form>
+
+      <section id="quiz-summary" class="quiz-summary" aria-live="polite"></section>
+    </div>
+
+    <footer>© 2025 American Football 101 • Reggie Bundrage</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
