@@ -1,197 +1,285 @@
-
 /* =====================================================
-   style.css (beginner version) by Reggie (college student)
-   I tried to keep this simple so it's easy to change later.
-   - There's only one CSS file for the whole website.
-   - I used Flexbox for the nav and CSS Grid for some sections.
-   - I used element, class, and ID selectors and also :hover.
+   style.css - Milestone 3 Responsive Version
+   American Football 101
+   Author: Reggie Bundrage
+
+   This file controls the whole website.
+   It includes desktop, tablet, and mobile styles.
 ===================================================== */
 
-/* basic page setup */
+/* ===== BASIC RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #222;
-  background: #f5f7fb; /* light blue-ish so text is readable */
-}
-
-/* headings and text spacing */
-h1, h2, h3 { margin: 10px 0; }
-p { margin: 10px 0 16px; }
-
-/* images should not overflow */
-img { max-width: 100%; height: auto; display: block; }
-
-/* simple container to center content */
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 12px;
-  background: white;       /* white panel background */
-  border: 1px solid #e4e7ef; /* a very light border */
-  border-radius: 8px;
-}
-
-/* ===== NAV BAR =====
-*/
-.nav {
-  position: fixed; /* stays on top even when scrolling */
-  top: 0; left: 0; right: 0;
-  background: #123a72;     /* dark blue */
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 10px;
-  border-bottom: 3px solid #f0b429; /* gold line to match my picture  */
-}
-.nav a {
-  color: white;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-}
-/* pseudo-class selector for hover */
-.nav a:hover {
-  background: rgba(255,255,255,0.18);
-}
-
-/*pushes page content below the my nav bar */
-.page { padding-top: 60px; }
-
-/* ===== GRID (very basic) =====
-   I used this to show I somwehat know use CSS Grid.
-*/
-.grid-basic {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 12px;
-}
-
-.card {
-  border: 1px solid #e6e9f2;
-  padding: 12px;
-  border-radius: 8px;
-  background: #fff;
-}
-
-/* ID selector example */
-#status {
-  background: #fff7dc;
-  border: 1px solid #f3e1a0;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-/* simple buttons for the home page */
-.btn {
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 999px;
-  text-decoration: none;
-  background: #f0b429;  /* gold */
-  color: #111;
-  margin: 4px 4px 0 0;
-  border: 1px solid #e0a61f;
-}
-.btn.alt {
-  background: #ffffff;
-  color: #123a72;
-  border: 1px solid #cfd6e6;
-}
-
-/* I didn't do a fancy hero here, just an image and text so it's easy to edit. */
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 10px 0 16px;
-  background: #fff;
-}
-th, td {
-  border: 1px solid #e4e7ef;
-  padding: 8px;
-  text-align: left;
-}
-th {
-  background: #f1f4fb;
-}
-
-footer {
-  text-align: center;
-  color: #666;
-  padding: 16px;
-  font-size: 14px;
-}
-
-
-/* ===== Navigation refinement (active link) ===== */
-.nav a.active {
-  background: rgba(255, 255, 255, 0.18);
-  font-weight: bold;
-}
-
-/* ===== Quiz page styles ===== */
-.quiz-intro {
-  max-width: 640px;
+  background: #f5f7fb;
   line-height: 1.5;
 }
 
-.quiz-question {
-  margin-top: 24px;
-  margin-bottom: 16px;
-  padding: 16px;
-  border-radius: 8px;
-  background: #ffffff;
-  border: 1px solid #e6e9f2;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.quiz-question h2 {
-  margin-top: 0;
+h1,
+h2,
+h3 {
+  margin: 10px 0;
+  color: #102a43;
+}
+
+p {
+  margin: 10px 0 16px;
+}
+
+a {
+  color: #1d4ed8;
+}
+
+/* ===== PAGE LAYOUT ===== */
+.page {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(96%, 1100px);
+  margin: 0 auto;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #e4e7ef;
+  border-radius: 10px;
+}
+
+/* ===== NAVIGATION ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #123a72;
+  border-bottom: 3px solid #f0b429;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.brand {
+  color: white;
+  font-weight: bold;
   font-size: 18px;
 }
 
-.quiz-options {
-  border: none;
-  margin: 8px 0 0;
-  padding: 0;
-}
-
-.quiz-options label {
-  display: block;
-  margin-bottom: 6px;
-  cursor: pointer;
-}
-
-.quiz-options input[type="radio"],
-.quiz-options input[type="checkbox"] {
-  margin-right: 6px;
-}
-
-.quiz-actions {
-  margin-top: 24px;
+/* Works for pages that only use .nav */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background: #123a72;
+  border-bottom: 3px solid #f0b429;
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+}
+
+.site-header .nav {
+  position: static;
+  border-bottom: none;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav a:hover {
+  transform: translateY(-1px);
+}
+
+/* Hamburger menu */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  width: 32px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 999px;
+  content: "";
+  transition: 0.25s ease;
+}
+
+.nav-toggle-label span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-toggle-label span::before {
+  top: -9px;
+}
+
+.nav-toggle-label span::after {
+  top: 9px;
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+  transform: rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+  opacity: 0;
+}
+
+/* ===== CARDS / GRIDS ===== */
+.grid-basic,
+.feature-grid,
+.learn-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-basic {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.feature-grid,
+.learn-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card,
+.feature-card,
+.learn-item,
+.quiz-question,
+.summary-card {
+  border: 1px solid #e4e7ef;
+  border-radius: 10px;
+  background: white;
+  padding: 16px;
+}
+
+.feature-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.14);
+}
+
+.highlight-card {
+  border-color: #1d4ed8;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  margin-top: 20px;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
-/* Buttons for quiz */
+.hero-text {
+  flex: 1 1 320px;
+}
+
+.hero-image {
+  flex: 1 1 280px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+}
+
+.hero-subtitle {
+  font-size: 17px;
+  max-width: 620px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ===== BUTTONS ===== */
+.btn,
 .btn-primary,
 .btn-secondary {
-  border: none;
-  border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 14px;
+  display: inline-block;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 15px;
+  text-decoration: none;
   cursor: pointer;
+  border: none;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.btn-primary {
+.btn-primary,
+.btn.btn-primary {
   background: #1d4ed8;
-  color: #ffffff;
+  color: white;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn.btn-primary:hover {
   background: #1e40af;
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -203,15 +291,113 @@ footer {
   background: #d1d5db;
 }
 
-/* Feedback + summary styling */
+.btn-outline {
+  background: white;
+  color: #1d4ed8;
+  border: 1px solid #1d4ed8;
+}
+
+.btn-outline:hover {
+  background: #eff6ff;
+}
+
+/* ===== TABLES ===== */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 14px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin: 12px 0 18px;
+}
+
+th,
+td {
+  border: 1px solid #e4e7ef;
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background: #eef1fb;
+}
+
+.teams-table {
+  min-width: 760px;
+}
+
+.team-logo {
+  width: 48px;
+  height: auto;
+}
+
+/* ===== QUIZ ===== */
+.quiz-intro {
+  max-width: 720px;
+}
+
+.quiz-question {
+  margin-top: 22px;
+}
+
+.quiz-question h2 {
+  margin-top: 0;
+  font-size: 19px;
+}
+
+.quiz-options {
+  border: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.quiz-options label {
+  display: block;
+  padding: 8px 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.quiz-options label:hover {
+  background: #f1f5f9;
+}
+
+.quiz-options input[type="radio"],
+.quiz-options input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.15);
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 320px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
 .feedback {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 14px;
 }
 
 .badge {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 3px 8px;
   border-radius: 999px;
   margin-right: 4px;
 }
@@ -226,21 +412,6 @@ footer {
   color: #b91c1c;
 }
 
-.answer-text {
-  font-size: 13px;
-}
-
-.quiz-summary {
-  margin-top: 24px;
-}
-
-.summary-card {
-  padding: 16px;
-  border-radius: 8px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-}
-
 .text-pass {
   color: #15803d;
 }
@@ -249,321 +420,26 @@ footer {
   color: #b91c1c;
 }
 
-/* Simple utility for screen-reader-only text */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-
-/* ===== Teams table with logos ===== */
-.teams-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
-}
-
-.teams-table th,
-.teams-table td {
-  border: 1px solid #e4e7ef;
-  padding: 8px;
-  text-align: left;
-  vertical-align: middle;
-}
-
-.teams-table thead th {
-  background: #eef1fb;
-  font-weight: bold;
-}
-
-.team-logo {
-  width: 48px;
-  height: auto;
-  display: block;
-}
-
-
-
-/* ===== Site Header & Navigation (homepage) ===== */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  background: linear-gradient(90deg, #0f172a, #1e293b);
-  color: #f9fafb;
-}
-
-.brand {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* Base nav layout */
-.nav {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.nav a {
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 14px;
-  color: #e5e7eb;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-/* Active nav link */
-.nav a.active {
-  background: rgba(248, 250, 252, 0.16);
-  color: #ffffff;
-  box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.25);
-}
-
-/* Hover animation */
-.nav a:hover {
-  background: rgba(59, 130, 246, 0.3);
-  color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.4);
-}
-
-/* Hamburger toggle */
-.nav-toggle {
-  display: none;
-}
-
-.nav-toggle-label {
-  display: none;
-  cursor: pointer;
-  width: 30px;
-  height: 22px;
-  position: relative;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #e5e7eb;
-  border-radius: 999px;
-  content: "";
-  transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease, bottom 0.2s ease;
-}
-
-.nav-toggle-label span {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.nav-toggle-label span::before {
-  top: -8px;
-}
-
-.nav-toggle-label span::after {
-  bottom: -8px;
-}
-
-/* When checked turn into an X */
-.nav-toggle:checked + .nav-toggle-label span {
-  transform: rotate(45deg);
-}
-.nav-toggle:checked + .nav-toggle-label span::before {
-  top: 0;
-  transform: rotate(-90deg);
-}
-.nav-toggle:checked + .nav-toggle-label span::after {
-  bottom: 0;
-  opacity: 0;
-}
-
-/* ===== Homepage hero & sections ===== */
-.hero {
-  margin-top: 24px;
-}
-
-.hero-inner {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  flex: 1 1 260px;
-  min-width: 260px;
-  animation: fadeInUp 0.4s ease-out 0.05s both;
-}
-
-.hero-subtitle {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-top: 8px;
-  margin-bottom: 16px;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.hero-note {
-  max-width: 420px;
-  color: #555;
-}
-
-.hero-image {
-  flex: 1 1 240px;
-  min-width: 240px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.hero-image img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  text-decoration: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-primary {
-  background: #1d4ed8;
-  color: #ffffff;
-  border-color: #1d4ed8;
-}
-
-.btn-primary:hover {
-  background: #1e40af;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #1d4ed8;
-  border-color: #1d4ed8;
-}
-
-.btn-outline:hover {
-  background: rgba(37, 99, 235, 0.06);
-}
-
-/* Homepage grids */
-.home-section {
-  margin-top: 32px;
-}
-
-.feature-grid {
-  margin-top: 16px;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.feature-card {
-  display: block;
-  text-decoration: none;
+/* ===== CONCEPT DIAGRAMS ===== */
+.concept-diagram,
+.concept-field,
+.formation-diagram {
+  margin-top: 12px;
   padding: 14px;
   border-radius: 10px;
-  background: #ffffff;
-  border: 1px solid #e4e7ef;
-  color: inherit;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  text-align: center;
 }
 
-.feature-card h3 {
-  margin-top: 0;
-  margin-bottom: 6px;
-  font-size: 16px;
-}
-
-.feature-card p {
-  margin: 0;
-  font-size: 14px;
-  color: #555;
-}
-
-.feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
-  border-color: #cbd5f5;
-}
-
-.highlight-card {
-  border-color: #1d4ed8;
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.18);
-}
-
-.learn-grid {
-  margin-top: 16px;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.learn-item {
-  background: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #e4e7ef;
-  padding: 12px;
-}
-
-.learn-item h3 {
-  margin-top: 0;
-  margin-bottom: 6px;
-  font-size: 15px;
-}
-
-/* Key concepts diagrams */
 .concept-diagram,
 .concept-field {
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 8px;
   background: #eef3ff;
   border: 1px solid #c8d2f2;
-  text-align: center;
-  font-size: 14px;
-}
-
-.yard-line,
-.first-down-line,
-.ten-yard-marker {
-  margin: 6px 0;
-  font-weight: bold;
 }
 
 .concept-field {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  gap: 10px;
+  align-items: stretch;
 }
 
 .endzone {
@@ -571,27 +447,19 @@ footer {
   padding: 16px;
   background: #1d4ed8;
   color: white;
-  border-radius: 6px;
-  text-align: center;
+  border-radius: 8px;
 }
 
 .field-center {
-  flex-grow: 1;
-  margin: 0 10px;
-  background: #dce4ff;
+  flex: 1;
   padding: 16px;
-  border-radius: 6px;
-  text-align: center;
+  background: #dce4ff;
+  border-radius: 8px;
 }
 
-/* Formation-style diagrams */
 .formation-diagram {
-  margin-top: 12px;
-  padding: 12px;
   background: #e8fbe8;
   border: 1px solid #b4e4b4;
-  border-radius: 8px;
-  text-align: center;
 }
 
 .formation-diagram.defense {
@@ -602,45 +470,126 @@ footer {
 .field-row {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
-  margin: 6px 0;
+  margin: 8px 0;
 }
 
 .player-off,
 .player-def {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   font-size: 12px;
-  line-height: 32px;
+  line-height: 34px;
   text-align: center;
   font-weight: bold;
 }
 
 .player-off {
   background: #ffb14d;
-  color: #000;
+  color: #111;
 }
 
 .player-def {
   background: #4d88ff;
-  color: #fff;
+  color: white;
 }
 
-/* Simple fade-in animation for hero */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+/* ===== MISC ===== */
+#status {
+  background: #fff7dc;
+  border: 1px solid #f3e1a0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.small {
+  font-size: 14px;
+  color: #555;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  background: #f8fafc;
+  border: 1px solid #e4e7ef;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+footer {
+  text-align: center;
+  color: #666;
+  padding: 18px;
+  font-size: 14px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* =====================================================
+   TABLET RESPONSIVE DESIGN
+   Screen size: 992px and below
+===================================================== */
+@media (max-width: 992px) {
+  .container {
+    width: 94%;
+    padding: 16px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .page {
+    padding-top: 95px;
+  }
+
+  .hero-inner {
+    gap: 20px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    padding: 6px 9px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .concept-field {
+    flex-direction: column;
+  }
+
+  .endzone {
+    width: 100%;
   }
 }
 
-/* Responsive tweaks */
+/* =====================================================
+   MOBILE RESPONSIVE DESIGN
+   Screen size: 768px and below
+===================================================== */
 @media (max-width: 768px) {
+  .page {
+    padding-top: 76px;
+  }
+
+  .container {
+    width: 96%;
+    padding: 14px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
   .site-header {
     flex-wrap: wrap;
   }
@@ -649,39 +598,150 @@ footer {
     display: block;
   }
 
-  .nav {
+  .site-header .nav {
+    display: none;
     width: 100%;
     flex-direction: column;
-    align-items: flex-start;
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top: 1px solid rgba(148, 163, 184, 0.6);
-    display: none;
+    align-items: stretch;
+    margin-top: 10px;
   }
 
   .nav-toggle:checked ~ .nav {
     display: flex;
   }
 
-  .nav a {
+  .site-header .nav a {
     width: 100%;
-    padding: 8px 0;
+    padding: 11px;
+    text-align: left;
+    border-radius: 8px;
+  }
+
+  body > .nav {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body > .nav a {
+    padding: 11px;
+    text-align: center;
+  }
+
+  body > .nav + .page {
+    padding-top: 16px;
   }
 
   .hero-inner {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
+  .hero-text,
   .hero-image {
-    justify-content: center;
+    width: 100%;
   }
 
   .hero-actions {
-    justify-content: flex-start;
+    flex-direction: column;
   }
 
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+  }
+
+  .grid-basic,
   .feature-grid,
   .learn-grid {
     grid-template-columns: 1fr;
   }
+
+  .quiz-options label {
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+  }
+
+  input[type="text"] {
+    max-width: 100%;
+  }
+
+  .quiz-actions {
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  .team-logo {
+    width: 40px;
+  }
+}
+
+/* =====================================================
+   SMALL PHONE RESPONSIVE DESIGN
+   Screen size: 480px and below
+===================================================== */
+@media (max-width: 480px) {
+  .container {
+    width: 98%;
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  p,
+  li,
+  td,
+  th {
+    font-size: 14px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .card,
+  .feature-card,
+  .learn-item,
+  .quiz-question,
+  .summary-card {
+    padding: 12px;
+  }
+
+  .player-off,
+  .player-def {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+    line-height: 30px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+.table-wrapper{
+  width:100%;
+  overflow-x:auto;
 }

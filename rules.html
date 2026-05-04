@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- super simple head -->
+  <!-- Rules and Scoring page for American Football 101 -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rules & Scoring - American Football 101</title>
@@ -9,7 +9,7 @@
 </head>
 <body>
   <!-- top navigation that is the same on every page -->
-    <div class="nav">
+  <div class="nav">
     <a href="index.html">Home</a>
     <a href="teams.html">NFL Teams</a>
     <a href="concepts.html">Key Concepts</a>
@@ -19,48 +19,208 @@
     <a href="quiz.html">Self-Assessment Quiz</a>
     <a href="about.html">About &amp; References</a>
   </div>
+
   <div class="page">
     <div class="container">
-      
-<h1>Rules &amp; Scoring</h1>
-<div class="grid-basic">
-  <div class="card">
-    <h2>Downs &amp; Distance</h2>
-    <ul>
-      <li>You get 4 downs to gain 10 yards.</li>
-      <li>If you gain 10 or more you get a new first down.</li>
-      <li>On 4th down you usually punt or try a field goal.</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2>Clock (very short)</h2>
-    <ul>
-      <li>4 quarters, timeouts, and the clock stops on some plays.</li>
-      <li>3 timeouts per team each half.</li>
-    </ul>
-  </div>
-</div>
 
-<h2>Scoring</h2>
-<table>
-  <thead><tr><th>Play</th><th>Points</th><th>Meaning</th></tr></thead>
-  <tbody>
-    <tr><td>Touchdown</td><td>6</td><td>Ball in the end zone</td></tr>
-    <tr><td>Extra Point Kick</td><td>1</td><td>Kick after a touchdown</td></tr>
-    <tr><td>Two-Point Try</td><td>2</td><td>Run/pass into the end zone after TD</td></tr>
-    <tr><td>Field Goal</td><td>3</td><td>Kick through the uprights during play</td></tr>
-    <tr><td>Safety</td><td>2</td><td>Offense downed in its own end zone</td></tr>
-  </tbody>
-</table>
+      <h1>Rules &amp; Scoring</h1>
 
-<!-- I included one more image and cited it -->
-<figure class="card">
-  <img src="https://static.www.nfl.com/image/upload/t_new_photo_album_2x/f_auto/league/q8vj8dhwvu6otpywlh94.jpg" alt="NFL action">
-  <figcaption class="small">Image © <a href="https://static.www.nfl.com/image/upload/t_new_photo_album_2x/f_auto/league/q8vj8dhwvu6otpywlh94.jpg" target="_blank" rel="noopener">NFL.com</a> (for learning only).</figcaption>
-</figure>
+      <p class="small">
+        This page explains the basic rules, scoring system, timing, penalties, and common game
+        situations in American football. Understanding these ideas makes it much easier to follow
+        a live game.
+      </p>
+
+      <div class="grid-basic">
+        <div class="card">
+          <h2>Basic Objective</h2>
+          <p>
+            The goal of football is to score more points than the other team. The offense tries to
+            move the ball down the field and score, while the defense tries to stop them, force a
+            turnover, or make them punt.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Players on the Field</h2>
+          <p>
+            Each team has <strong>11 players</strong> on the field at a time. One team plays offense,
+            the other plays defense, and special teams come on for kicks, punts, and returns.
+          </p>
+        </div>
+      </div>
+
+      <section class="card">
+        <h2>Downs &amp; Distance</h2>
+        <p>
+          Football is built around the down system. The offense gets <strong>four downs</strong>
+          to gain <strong>10 yards</strong>. If they gain 10 or more yards, they earn a new first down.
+        </p>
+
+        <ul>
+          <li><strong>1st Down:</strong> The start of a new set of plays.</li>
+          <li><strong>2nd Down:</strong> The offense adjusts based on yards gained or lost.</li>
+          <li><strong>3rd Down:</strong> A key pressure down because the offense wants to keep the drive alive.</li>
+          <li><strong>4th Down:</strong> The team usually punts, kicks a field goal, or attempts to gain the remaining yards.</li>
+        </ul>
+
+        <p>
+          Example: If the announcer says <strong>“3rd and 4”</strong>, that means it is third down
+          and the offense needs four yards for a new first down.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Scoring System</h2>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Scoring Play</th>
+                <th>Points</th>
+                <th>What It Means</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Touchdown</td>
+                <td>6</td>
+                <td>The ball is carried or caught in the opponent’s end zone.</td>
+              </tr>
+              <tr>
+                <td>Extra Point Kick</td>
+                <td>1</td>
+                <td>After a touchdown, the team kicks the ball through the uprights.</td>
+              </tr>
+              <tr>
+                <td>Two-Point Conversion</td>
+                <td>2</td>
+                <td>After a touchdown, the team runs or passes the ball into the end zone.</td>
+              </tr>
+              <tr>
+                <td>Field Goal</td>
+                <td>3</td>
+                <td>The kicker kicks the ball through the uprights during a drive.</td>
+              </tr>
+              <tr>
+                <td>Safety</td>
+                <td>2</td>
+                <td>The defense tackles the offense in its own end zone.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Game Clock</h2>
+        <p>
+          A football game is divided into <strong>four quarters</strong>. In the NFL and college
+          football, each quarter is 15 minutes long. The clock does not run continuously because it
+          can stop after certain plays.
+        </p>
+
+        <ul>
+          <li>The clock may stop after incomplete passes.</li>
+          <li>The clock may stop when a player goes out of bounds.</li>
+          <li>Teams can call timeouts to stop the clock.</li>
+          <li>The clock stops for penalties, injuries, reviews, and changes of possession.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Common Penalties</h2>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Penalty</th>
+                <th>Common Yardage</th>
+                <th>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>False Start</td>
+                <td>5 yards</td>
+                <td>An offensive player moves before the ball is snapped.</td>
+              </tr>
+              <tr>
+                <td>Offside</td>
+                <td>5 yards</td>
+                <td>A defensive player crosses the line of scrimmage too early.</td>
+              </tr>
+              <tr>
+                <td>Holding</td>
+                <td>Usually 10 yards</td>
+                <td>A player illegally grabs or restricts an opponent.</td>
+              </tr>
+              <tr>
+                <td>Pass Interference</td>
+                <td>Varies</td>
+                <td>A player illegally prevents an opponent from catching a pass.</td>
+              </tr>
+              <tr>
+                <td>Delay of Game</td>
+                <td>5 yards</td>
+                <td>The offense does not snap the ball before the play clock expires.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Turnovers</h2>
+        <p>
+          A turnover happens when the offense loses possession of the ball. Turnovers are important
+          because they can quickly change momentum.
+        </p>
+
+        <ul>
+          <li><strong>Interception:</strong> A defensive player catches a pass thrown by the quarterback.</li>
+          <li><strong>Fumble:</strong> A player loses control of the ball before being ruled down.</li>
+          <li><strong>Turnover on Downs:</strong> The offense fails to gain enough yards on fourth down.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Special Teams</h2>
+        <p>
+          Special teams are used for kicking plays. These plays can affect field position and scoring.
+        </p>
+
+        <ul>
+          <li><strong>Kickoff:</strong> Starts each half and follows most scoring plays.</li>
+          <li><strong>Punt:</strong> Usually happens on fourth down when the offense gives up possession.</li>
+          <li><strong>Field Goal Attempt:</strong> A kick for three points.</li>
+          <li><strong>Extra Point Attempt:</strong> A kick after a touchdown for one point.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Simple Game Situation Example</h2>
+        <p>
+          Imagine the offense has the ball at midfield. It is <strong>2nd and 6</strong>. That means
+          the offense has already used first down and still needs six more yards to earn a new set of
+          downs. The coach might call a short pass, a run play, or a play-action pass depending on
+          the defense.
+        </p>
+      </section>
+
+      <figure class="card">
+        <img src="https://static.www.nfl.com/image/upload/t_new_photo_album_2x/f_auto/league/q8vj8dhwvu6otpywlh94.jpg" alt="NFL football action on the field" />
+        <figcaption class="small">
+          Image source:
+          <a href="https://static.www.nfl.com/image/upload/t_new_photo_album_2x/f_auto/league/q8vj8dhwvu6otpywlh94.jpg" target="_blank" rel="noopener">NFL.com</a>
+        </figcaption>
+      </figure>
 
     </div>
-    <footer>© 2025 American Football 101 • Reggie Bundrage</footer>
+
+    <footer>© 2026 American Football 101 • Reggie Bundrage</footer>
   </div>
 </body>
 </html>
